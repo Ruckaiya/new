@@ -50,10 +50,571 @@
 </head>
 
 <body>
+    <style>
+        .box {
+           /* width: 300px; */
+           width: 200px;
+           /* box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2); */
+           border-radius: 10px;
+           overflow: hidden;
+           /* margin: 25px; */
+           margin: 15px 5px 0px 5px;
+       }
+
+       .slide-img {
+           /* height: 450px; */
+           height: 280px;
+           position: relative;
+       }
+
+       .slide-img img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           box-sizing: border-box;
+       }
+
+       .detail-box {
+           width: 100%;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 10px 20px;
+           box-sizing: border-box;
+           font-family: calibri;
+       }
+
+       .type {
+           display: flex;
+           flex-direction: column;
+       }
+
+       .type a {
+           color: #222222;
+           margin: 5px 0px;
+           font-weight: 700;
+           letter-spacing: 0.5px;
+           padding-right: 8px;
+       }
+
+       .type span {
+           color: rgba(26, 26, 26, 0.5);
+       }
+
+       .price {
+           color: #333333;
+           font-weight: 600;
+           font-size: 1.1rem;
+           font-family: poppins;
+           letter-spacing: 0.5px;
+       }
+
+       .overlay {
+           position: absolute;
+           left: 50%;
+           top: 50%;
+           transform: translate(-50%, -50%);
+           width: 100%;
+           height: 100%;
+           background-color: rgba(92, 95, 236, 0.6);
+           display: flex;
+           justify-content: center;
+           align-items: center;
+       }
+
+       .buy-btn {
+           width: 160px;
+           height: 40px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background-color: #FFFFFF;
+           color: #252525;
+           font-weight: 700;
+           letter-spacing: 1px;
+           font-family: calibri;
+           border-radius: 20px;
+           box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+       }
+
+       .buy-btn:hover {
+           color: #FFFFFF;
+           background-color: #f15fa3;
+           transition: all ease 0.3s;
+       }
+
+       .overlay {
+           visibility: hidden;
+       }
+
+       .slide-img:hover .overlay {
+           visibility: visible;
+           animation: fade 0.5s;
+       }
+
+       @keyframes fade {
+           0% {
+               opacity: 0;
+           }
+
+           100% {
+               opacity: 1;
+           }
+       }
+
+       .slider,
+       .slider-2,
+       .slider-3 {
+           width: 100%;
+           /* height: 100vh; */
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding-left: 15px;
+       }
+
+       .lSAction>.lSPrev {
+           right: 50px;
+           background-image: url(img/back.png);
+           background-color: var(--light-pink);
+       }
+
+       .lSAction>.lSNext {
+           background-image: url(img/arrow-point-to-right_B.png);
+           background-color: var(--light-pink);
+           opacity: 1;
+       }
+
+       .lSAction>a {
+           opacity: 1;
+
+           top: 20px;
+       }
+
+       #autoWidth {
+           margin-top: 40px;
+       }
+
+       #autoWidth-2,
+       #autoWidth-3 {
+           margin-top: 40px;
+       }
+.info{
+   /* width: 50%;
+   background-color: #fff;
+   z-index: 1;
+   padding: 35px 40px;
+   box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1),
+   0 -15px 35px rgba(0, 0, 0, 0.1),
+   0 15px 35px rgba(0, 0, 0, 0.1); */
+
+   padding: 0px 40px;
+  
+}
+
+@media (min-width:767px) {
+   .info {
+        width: 75%;
+   }
+}
+
+.review-stars {
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+.product-single-Name{
+   padding: 0 0 10px 0;
+}
+
+.product-single-Name div{
+   display: flex;
+   align-items: center;
+}
+
+.product-single-Name div .big{
+   margin-right: 10px;
+   font-size: 1.5rem;
+   color: #333;
+   line-height: 1;
+}
+
+.product-single-Name div .new{
+   background-color: var(--primary);
+   text-transform: uppercase;
+   color: #fff;
+   padding: 3px 10px;
+   border-radius: 5px;
+   transition: .5s;
+}
+
+.product-single-Name .small{
+   font-weight: bold;
+   color: #A9365F;
+   margin-top: 3px;
+   text-transform: capitalize;
+   font-size: 14px;
+}
+
+/* .product-single-Name, .description, .color-container, .size-container{
+   border-bottom: 1px solid #dadada;
+} */
+
+.description{
+   padding: 10px 0;
+}
+
+.title{
+   color: #3a3a3a;
+
+   font-size: 1.2rem;
+   
+}
+
+.text{
+   color: #555;
+   font-size: 17px;
+}
+
+.color-container{
+   padding: 10px 0;
+}
+
+.colors{
+   padding: 8px 0;
+   display: flex;
+   align-items: center;
+}
+
+.color{
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+   margin-right: 10px;
+   border: 5px solid;
+   cursor: pointer;
+   transition: .5s;
+}
+
+.color[color="blue"]{
+   background-color: #2175f5;
+   border-color: #2175f5;
+}
+
+.color[color="red"]{
+   background-color: #f84848;
+   border-color: #f84848;
+}
+
+.color[color="green"]{
+   background-color: #29b864;
+   border-color: #29b864;
+}
+
+.color[color="orange"]{
+   background-color: #ff5521;
+   border-color: #ff5521;
+}
+
+.color[color="black"]{
+   background-color: #444;
+   border-color: #444;
+}
+
+.color.active{
+   border-color: #fff;
+   box-shadow: 0 0 10px .5px rgba(0, 0, 0, 0.2);
+   transform: scale(1.1);
+}
+
+.size-container{
+   padding: 10px 0;
+   margin-bottom: 10px;
+}
+
+.sizes{
+   padding: 6px 0;
+   display: flex;
+   align-items: center;
+}
+
+.size{
+   width: 50px;
+   height: 30px;
+   border: 1px solid #000;
+   background-color: #eee;
+   /* margin: 0 10px; */
+   margin-right: 20px;
+   text-align: center;
+   line-height: 30px;
+   font-size: 0.8rem;
+   font-weight: 500;
+   cursor: pointer;
+   transition: .3s;
+}
+
+/* .size.active{
+   background-color: var(--primary);
+   color: #fff;
+   transition: .5s;
+} */
+
+.buy-price{
+   /* padding-top: 15px; */
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.info .price{
+   color: #333;
+   display: flex;
+   align-items: flex-start;
+}
+
+.price h1{
+   font-size: 1.4rem;
+   font-weight: 600;
+   line-height: 1;
+   padding-top: 12px;
+   padding-bottom: 10px;
+}
+
+.price i{
+   font-size: 1.4rem;
+   margin-right: 1px;
+}
+
+.buy {
+   padding: .7rem 1rem;
+   background-color: #000;
+   text-decoration: none;
+   color: #fff;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   font-weight: 500;
+   font-size: 1rem;
+   width: 100%;
+   text-align: center;
+}
+
+.favourite{
+   
+   border: 1px solid #000;
+   background-color: #eee;
+   /* margin: 0 10px; */
+padding: 10px;
+   text-align: center;
+  
+   font-size: 1.5rem;
+   font-weight: 500;
+   cursor: pointer;
+   transition: .3s;
+}
+
+
+.buy i{
+   margin-right: 2px;
+}
+
+@media (max-width: 1070px){
+   .product-single-{
+       width: 135%;
+   }
+}
+
+@media (max-width: 1000px){
+   .card{
+       flex-direction: column;
+       width: 100%;
+       box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.2);
+   }
+   
+   .card > div{
+       width: 100%;
+       box-shadow: none;
+   }
+
+   .product-single-{
+       width: 100%;
+       transform: rotate(-5deg) translateY(-50%);
+       top: 55%;
+       right: 2%;
+   }
+
+   .nike{
+       top: 20%;
+       left: 5%;
+   }
+}
+
+@media (max-width: 600px){
+   .share{
+       width: 40px;
+       height: 40px;
+   }
+
+   .share i {
+       font-size: 1rem;
+       line-height: 40px;
+   }
+
+  
+}
+
+@media (max-width: 490px){
+   .nike{
+       font-size: 7rem;
+   }
+
+   .product-single-Name div .big{
+       font-size: 1.3rem;
+   }
+
+   .small{
+       font-size: 1rem;
+   }
+
+   .new{
+       padding: 2px 6px;
+       font-size: .9rem;
+   }
+
+   .title{
+       font-size: .9rem;
+   }
+
+   .text{
+       font-size: .8rem;
+   }
+/* 
+   .buy{
+       padding: .5rem .8rem;
+       font-size: .8rem;
+   } */
+
+   .price h1{
+       font-size: 1.5rem;
+   }
+
+   .price i{
+       font-size: .9rem;
+   }
+
+   .size{
+       width: 30px;
+       height: 30px;
+       margin: 0 8px;
+       font-size: .9rem;
+       line-height: 30px;
+   }
+
+
+   .info{
+       padding: 20px;
+   }
+}
+
+@media (max-width: 400px){
+   .buy i{
+       display: none;
+   }
+
+ 
+}
+
+/*
+CSS for the main interaction
+*/
+.sidebar-single {
+/* border-bottom: 1px solid #000; */
+border-top: 1px solid #000;
+padding-top: 15px;
+}
+
+.sidebar-single > input[type="checkbox"] {
+ position: absolute;
+ left: -100vw;
+}
+
+.sidebar-single .content {
+ overflow-y: hidden;
+ height: 0;
+ transition: height 0.3s ease;
+}
+
+.sidebar-single > input[type="checkbox"]:checked ~ .content {
+ height: auto;
+ overflow: visible;
+ padding-bottom: 15px;
+}
+
+.sidebar-single label {
+ display: block;
+}
+
+
+.sidebar-single {
+ margin-bottom: .5em;
+}
+
+/* .sidebar-single > input[type="checkbox"]:checked ~ .content {
+ padding: 15px;
+ border: 1px solid #e8e8e8;
+ border-top: 0;
+} */
+
+.sidebar-single .handle {
+ margin: 0;
+ font-size: .8em;
+ line-height: 1.2em;
+ padding-bottom: 10px;
+ font-weight: bold;
+}
+
+.sidebar-single h4 {
+ color: rgb(0, 0, 0);
+
+ cursor: pointer;
+ font-weight: normal;
+ /* padding: 15px; */
+ font-size: 9px;
+ text-transform: uppercase;
+ font-weight: bold;
+ /* background: #e8e8e8; */
+ border-top: 1px solid #000;
+ padding-top: 15px;
+}
+
+/* .sidebar-single label:hover,
+.sidebar-single label:focus {
+ background: #d8d8d8;
+} */
+
+.sidebar-single .handle label:before {
+ font-family: 'fontawesome';
+ content: "\f067";
+ display: inline-block;
+ margin-right: 10px;
+ font-size: .58em;
+ line-height: 1.556em;
+ vertical-align: middle;
+ float: right;
+}
+
+.sidebar-single > input[type="checkbox"]:checked ~ .handle label:before {
+ content: "\f068";
+}
 
 
 
-    <body>
+.sidebar-single {
+ max-width: 65em;
+}
+
+.sidebar-single p:last-child {
+ margin-bottom: 0;
+}
+   </style>
         <!-- Header Section Begin -->
         <header class="header-section">
             <div class="header-top">
@@ -176,7 +737,7 @@
                     </button>
                     <div class="collapse navbar-collapse" id="mobile_nav">
 
-                        <ul class="navbar-nav navbar-light" id="navbar-nav">
+                        <ul class="navbar-nav navbar-light nav-fill w-100 " id="navbar-nav">
                             <li class="nav-item"><a class="nav-link" href="#">New!</a></li>
                             <li class="nav-item dropdown megamenu-li dmenu">
                                 <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
@@ -595,12 +1156,12 @@
 
                 <div class="top-header-content">
                     <div class="breadcrumb-contentnhy">
-                        <div class="container">
+                        <div class="container-fluid">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb mb-0">
                                     <li><a href="index.html">Home</a>
                                         <span class="fa fa-angle-double-right"></span></li>
-                                    <li class="active">Shop</li>
+                                    <li><a href="">Shop</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -609,7 +1170,7 @@
         </section>
         <section class="w3l-ecommerce-main-inn">
 
-            <h3 class="hny-title text-center">BLACK SCARVES</h3>
+            <h3 class="hny-title text-center">SEARCH RESULTS FOR "BLACK SCARVES"</h3>
             <!--/mag-content-->
             <div class="ecomrhny-content-inf py-2">
                 <div class="container-fluid py-lg-2">
@@ -626,230 +1187,127 @@
                             <!--/ecommerce-left-hny-->
                             <aside>
                                 <div class="sider-bar">
-                                    <div class="single-gd mb-5">
-
-                                        <!-- <h4>Search <span>here</span></h4>
-								<form action="#" method="post" class="search-trans-form">
-									<input class="form-control" type="search" name="search" placeholder="Search here..."
-										required="">
-									<button class="btn read-2">
-										<span class="fa fa-search"></span>
-									</button>
-
-								</form> -->
+                                    <div class="single-gd">
                                     </div>
                                     <!-- /Gallery-imgs -->
-
-                                    <div class="single-gd mb-5">
-                                        <h4>Product <span>Categories</span></h4>
-                                        <ul class="list-group single">
-                                            <li
-                                                class="list-group-item d-flex justify-content-between align-items-center">
-                                                Accessories
-                                                <span class="badge badge-primary badge-pill">14</span>
-                                            </li>
-                                            <li
-                                                class="list-group-item d-flex justify-content-between align-items-center">
-                                                Suits
-                                                <span class="badge badge-primary badge-pill">18</span>
-                                            </li>
-                                            <li
-                                                class="list-group-item d-flex justify-content-between align-items-center">
-                                                Footwear
-                                                <span class="badge badge-primary badge-pill">12</span>
-                                            </li>
-                                            <li
-                                                class="list-group-item d-flex justify-content-between align-items-center">
-                                                Blazers
-                                                <span class="badge badge-primary badge-pill">10</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="single-gd mb-5">
-                                        <h4>Filter by <span>Price</span></h4>
-
-                                        <ul class="dropdown-vjm-transitu6">
-                                            <li>
-
-                                                <div id="slider-range"
-                                                    class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                                    <div class="ui-slider-range ui-widget-header"
-                                                        style="left: 0.555556%; width: 18.5556%;"></div><a
-                                                        class="ui-slider-handle ui-state-default ui-corner-all" href="#"
-                                                        style="left: 0.555556%;"></a><a
-                                                        class="ui-slider-handle ui-state-default ui-corner-all" href="#"
-                                                        style="left: 19.1111%;"></a>
-                                                </div>
-                                                <input type="text" id="amount"
-                                                    style="border: 0; color: #ffffff; font-weight: normal;">
-                                            </li>
-                                        </ul>
-
-
-                                        <!--//Gallery-imgs-->
-                                    </div>
-
-                                    <div class="single-gd mb-5">
-                                        <h4>Discount </h4>
-                                        <div classes="box-hny">
-                                            <label class="containerhny-checkbox">15% or More
-                                                <input type="checkbox" checked="checked">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="containerhny-checkbox">20% or More
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="containerhny-checkbox">35% or More
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="containerhny-checkbox">55% or More
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-
-                                            <label class="containerhny-checkbox">65% or More
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="containerhny-checkbox">75% or More
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-
+                                    <section class="sidebar-single sidebar-single-1">
+                                        <input type="checkbox" name="collapse" id="handle1" checked="checked">
+                                        <h5 class="handle">
+                                          <label for="handle1">SIZE</label>
+                                        </h5>
+                                        <div class="content">
+                                        <div class="single-gd">
+                                            <div classes="box-hny">
+                                                <label class="containerhny-checkbox">L
+                                                    <input type="checkbox" checked="checked">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="containerhny-checkbox">XL
+                                                    <input type="checkbox">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="containerhny-checkbox">M
+                                                    <input type="checkbox">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="containerhny-checkbox">XXL
+                                                    <input type="checkbox">
+                                                    <span class="checkmark"></span>
+                                                </label>
+    
+                                                <label class="containerhny-checkbox">S
+                                                    <input type="checkbox">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="containerhny-checkbox">XS
+                                                    <input type="checkbox">
+                                                    <span class="checkmark"></span>
+                                                </label>
+    
+                                            </div>
+    
                                         </div>
-
-                                    </div>
-                                    <!-- <div class="single-gd customer-rev left-side mb-5">
-                                        <h4>Customer <span>Color</span></h4>
-
-                                        <ul class="product-color">
-                                            <li>
-                                                <label style="background-color:rgb(165, 10, 10);"></label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="color-check" id="#A2C2C9check"
-                                                    checked="checked" />
-                                                <label for="#A2C2C9check" style="background-color:#A2C2C9;"></label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="color-check" id="#EFDBD4check"
-                                                    checked="checked" />
-                                                <label for="#EFDBD4check" style="background-color:#EFDBD4;"></label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="color-check" id="#2196F3check"
-                                                    checked="checked" />
-                                                <label for="#2196F3check" style="background-color:#2196F3;"></label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="color-check" id="#4CAF50check"
-                                                    checked="checked" />
-                                                <label for="#4CAF50check" style="background-color:#4CAF50;"></label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="color-check" id="#00BCD4check"
-                                                    checked="checked" /> 
-                                    <label for="#00BCD4check" style="background-color:#00BCD4;"></label>
-                                    </li>
-                                    </ul>
-                                </div>
-                                <div class="single-gd left-side mb-5">
-                                    <h4>Customer Ratings</h4>
-                                    <ul class="ratingshyny">
-                                        <li>
-                                            <a href="#">
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span>5.0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star-o" aria-hidden="true"></span>
-                                                <span>4.0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star-half-o" aria-hidden="true"></span>
-                                                <span class="fa fa-star-o" aria-hidden="true"></span>
-                                                <span>3.5</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star-o" aria-hidden="true"></span>
-                                                <span class="fa fa-star-o" aria-hidden="true"></span>
-                                                <span>3.0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star" aria-hidden="true"></span>
-                                                <span class="fa fa-star-half-o" aria-hidden="true"></span>
-                                                <span class="fa fa-star-o" aria-hidden="true"></span>
-                                                <span class="fa fa-star-o" aria-hidden="true"></span>
-                                                <span>2.5</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div> -->
-
-                                    <div class="single-gd mb-5 border-0">
-                                        <h4>Recent <span>Products</span></h4>
-                                        <div class="row special-sec1 mt-4">
-                                            <div class="col-4 img-deals">
-                                                <a href="ecommerce-single.html"><img src="assets/images/shop-88.jpg"
-                                                        class="img-fluid" alt=""></a>
-                                            </div>
-                                            <div class="col-8 img-deal1">
-                                                <h5 class="post-title">
-                                                    <a href="ecommerce-single.html">Blue Sweater</a> </h5>
-
-                                                <a href="ecommerce-single.html" class="price-right">$499.00</a>
-                                            </div>
-
                                         </div>
-                                        <div class="row special-sec1 mt-4">
-                                            <div class="col-4 img-deals">
-                                                <a href="ecommerce-single.html"><img src="assets/images/shop-77.jpg"
-                                                        class="img-fluid" alt=""></a>
+                                    </section>
+                                    <section class="sidebar-single">
+                                        <input type="checkbox" name="collapse2" id="handle2" checked="checked">
+                                        <h5 class="handle">
+                                          <label for="handle2">FILTER BY PRICE</label>
+                                        </h5>
+                                        <div class="content">
+                                            <div class="single-gd ">
+                                    
+                                                <ul class="dropdown-vjm-transitu6">
+                                                    <li>
+        
+                                                        <div id="slider-range"
+                                                            class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                                            <div class="ui-slider-range ui-widget-header"
+                                                                style="left: 0.555556%; width: 18.5556%;"></div><a
+                                                                class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                                                style="left: 0.555556%;"></a><a
+                                                                class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                                                style="left: 19.1111%;"></a>
+                                                        </div>
+                                                        <input type="text" id="amount"
+                                                            style="border: 0; color: #ffffff; font-weight: normal;">
+                                                    </li>
+                                                </ul>
+        
+        
+                                                <!--//Gallery-imgs-->
                                             </div>
-                                            <div class="col-8 img-deal1">
-                                                <h5 class="post-title">
-                                                    <a href="ecommerce-single.html">White T-Shirt</a> </h5>
-                                                <a href="ecommerce-single.html" class="price-right">$575.00</a>
-                                            </div>
-
                                         </div>
-
-                                    </div>
+                                    </section>
+                                    
+                                    <section class="sidebar-single">
+                                        <input type="checkbox" name="collapse" id="handle" checked="checked">
+                                        <h5 class="handle">
+                                          <label for="handle">COLORS</label>
+                                        </h5>
+                                        <div class="content">
+                                            <div class="single-gd mb-5">
+                                                <ul class="product-color">
+                                                    <li>
+                                                        <label style="background-color:rgb(165, 10, 10);"></label>
+                                                        <h6>Red</h6>
+                                                    </li>
+                                                    <li>
+                                                        <label for="#A2C2C9check" style="background-color:#A2C2C9;"></label>
+                                                        <h6>Grey</h6>
+                                                    </li>
+                                                    <li>
+                                                        <label for="#EFDBD4check" style="background-color:#EFDBD4;"></label>
+                                                        <h6>Pink</h6>
+                                                    </li>
+                                                    <li>
+                                                        <label for="#2196F3check" style="background-color:#2196F3;"></label>
+                                                        <h6>Blue</h6>
+                                                    </li>
+                                                    <li>
+                                                        <label for="#4CAF50check" style="background-color:#4CAF50;"></label>
+                                                        <h6>Green</h6>
+                                                    </li>
+                                                    <li>
+                                            <label for="#00BCD4check" style="background-color:#00BCD4;"></label>
+                                            <h6>Violet</h6>
+                                            </li>
+                                                </ul>
+        
+                                                <!--//Gallery-imgs-->
+                                            </div>
+                                        </div>
+                                    </section>
                                 </div>
                             </aside>
                             <!--//ecommerce-left-hny-->
                         </div>
                         <div class="ecommerce-right-hny col-lg-9">
                             <div class="row ecomhny-topbar">
-                                <div class="col-6 ecomhny-result">
+                                <div class="col-lg-9 col-6 ecomhny-result">
                                     <h4 class="ecomhny-result-count"> Showing all 9 Results</h4>
                                 </div>
-                                <div class="col-6 ecomhny-topbar-ordering">
+                                <div class="col-lg-3 col-6 ecomhny-topbar-ordering">
 
                                     <div class="ecom-ordering-select d-flex">
                                         <span class="fa fa-angle-down" aria-hidden="true"></span>
@@ -897,264 +1355,20 @@
                                             </div>
                                         </div>
                                         <div class="product-content">
-                                            <h3 class="title"><a href="ecommerce-single.html">Women Maroon Top </a>
-                                            </h3>
-                                            <span class="price"><del>$975.00</del>$899.99</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-6 product-incfhny mb-4">
-                                    <div class="product-grid2">
-                                        <div class="product-image2">
-                                            <a href="ecommerce-single.html">
-                                                <img class="pic-1 img-fluid" src="assets/images/shop-2.jpg">
-                                                <img class="pic-2 img-fluid" src="assets/images/shop-22.jpg">
-                                            </a>
-                                            <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span
-                                                            class="fa fa-eye"></span></a>
-                                                </li>
-
-                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
-                                                            class="fa fa-shopping-bag"></span></a>
-                                                </li>
+                                            <h3 class="title"><a href="#">Product name </a></h3>
+                                            <h3 class="title"><a href="#">Vendor name </a></h3>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="far fa-star"></li>
                                             </ul>
-                                            <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                    <input type="hidden" name="cmd" value="_cart">
-                                                    <input type="hidden" name="add" value="1">
-                                                    <input type="hidden" name="transmitv_item" value="Men's Pink Shirt">
-                                                    <input type="hidden" name="amount" value="599.99">
-                                                    <button type="submit"
-                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                        Add to Cart
-                                                    </button>
-                                                </form>
+                                            <div class="price">
+                                                CA$100
                                             </div>
                                         </div>
-                                        <div class="product-content">
-                                            <h3 class="title"><a href="ecommerce-single.html">Men's Pink Shirt </a>
-                                            </h3>
-                                            <span class="price"><del>$775.00</del>$599.99</span>
-                                        </div>
                                     </div>
-
-                                </div>
-                                <div class="col-lg-3 col-6 product-incfhny mb-4">
-                                    <div class="product-grid2">
-                                        <div class="product-image2">
-                                            <a href="ecommerce-single.html">
-                                                <img class="pic-1 img-fluid" src="assets/images/shop-3.jpg">
-                                                <img class="pic-2 img-fluid" src="assets/images/shop-33.jpg">
-                                            </a>
-                                            <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span
-                                                            class="fa fa-eye"></span></a>
-                                                </li>
-
-                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
-                                                            class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                            </ul>
-                                            <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                    <input type="hidden" name="cmd" value="_cart">
-                                                    <input type="hidden" name="add" value="1">
-                                                    <input type="hidden" name="transmitv_item" value="Dark Blue Top">
-                                                    <input type="hidden" name="amount" value="799.99">
-                                                    <button type="submit"
-                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                        Add to Cart
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3 class="title"><a href="ecommerce-single.html">Dark Blue Top </a></h3>
-                                            <span class="price"><del>$875.00</del>$799.99</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-3 col-6 product-incfhny mb-4">
-                                    <div class="product-grid2">
-                                        <div class="product-image2">
-                                            <a href="ecommerce-single.html">
-                                                <img class="pic-1 img-fluid" src="assets/images/shop-4.jpg">
-                                                <img class="pic-2 img-fluid" src="assets/images/shop-44.jpg">
-                                            </a>
-                                            <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span
-                                                            class="fa fa-eye"></span></a>
-                                                </li>
-
-                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
-                                                            class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                            </ul>
-                                            <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                    <input type="hidden" name="cmd" value="_cart">
-                                                    <input type="hidden" name="add" value="1">
-                                                    <input type="hidden" name="transmitv_item" value="Women Tunic">
-                                                    <input type="hidden" name="amount" value="399.99">
-                                                    <button type="submit"
-                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                        Add to Cart
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3 class="title"><a href="ecommerce-single.html">Women Tunic </a></h3>
-                                            <span class="price"><del>$475.00</del>$399.99</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-3 col-6 product-incfhny mb-4">
-                                    <div class="product-grid2">
-                                        <div class="product-image2">
-                                            <a href="ecommerce-single.html">
-                                                <img class="pic-1 img-fluid" src="assets/images/shop-5.jpg">
-                                                <img class="pic-2 img-fluid" src="assets/images/shop-55.jpg">
-                                            </a>
-                                            <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span
-                                                            class="fa fa-eye"></span></a>
-                                                </li>
-
-                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
-                                                            class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                            </ul>
-                                            <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                    <input type="hidden" name="cmd" value="_cart">
-                                                    <input type="hidden" name="add" value="1">
-                                                    <input type="hidden" name="transmitv_item" value="Yellow T-Shirt">
-                                                    <input type="hidden" name="amount" value="299.99">
-                                                    <button type="submit"
-                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                        Add to Cart
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3 class="title"><a href="ecommerce-single.html">Yellow T-Shirt</a></h3>
-                                            <span class="price"><del>$575.00</del>$299.99</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-3 col-6 product-incfhny mb-4">
-                                    <div class="product-grid2">
-                                        <div class="product-image2">
-                                            <a href="ecommerce-single.html">
-                                                <img class="pic-1 img-fluid" src="assets/images/shop-6.jpg">
-                                                <img class="pic-2 img-fluid" src="assets/images/shop-66.jpg">
-                                            </a>
-                                            <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span
-                                                            class="fa fa-eye"></span></a>
-                                                </li>
-
-                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
-                                                            class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                            </ul>
-                                            <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                    <input type="hidden" name="cmd" value="_cart">
-                                                    <input type="hidden" name="add" value="1">
-                                                    <input type="hidden" name="transmitv_item" value="Straight Kurta">
-                                                    <input type="hidden" name="amount" value="699.99">
-                                                    <button type="submit"
-                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                        Add to Cart
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3 class="title"><a href="ecommerce-single.html">Straight Kurta </a></h3>
-                                            <span class="price"><del>$775.00</del>$699.99</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-3 col-6 product-incfhny mb-4">
-                                    <div class="product-grid2">
-                                        <div class="product-image2">
-                                            <a href="ecommerce-single.html">
-                                                <img class="pic-1 img-fluid" src="assets/images/shop-7.jpg">
-                                                <img class="pic-2 img-fluid" src="assets/images/shop-77.jpg">
-                                            </a>
-                                            <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span
-                                                            class="fa fa-eye"></span></a>
-                                                </li>
-
-                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
-                                                            class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                            </ul>
-                                            <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                    <input type="hidden" name="cmd" value="_cart">
-                                                    <input type="hidden" name="add" value="1">
-                                                    <input type="hidden" name="transmitv_item" value="White T-Shirt">
-                                                    <input type="hidden" name="amount" value="599.99">
-                                                    <button type="submit"
-                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                        Add to Cart
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3 class="title"><a href="ecommerce-single.html">White T-Shirt </a></h3>
-                                            <span class="price"><del>$675.00</del>$599.99</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-3 col-6 product-incfhny mb-4">
-                                    <div class="product-grid2">
-                                        <div class="product-image2">
-                                            <a href="ecommerce-single.html">
-                                                <img class="pic-1 img-fluid" src="assets/images/shop-8.jpg">
-                                                <img class="pic-2 img-fluid" src="assets/images/shop-88.jpg">
-                                            </a>
-                                            <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span
-                                                            class="fa fa-eye"></span></a>
-                                                </li>
-
-                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
-                                                            class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                            </ul>
-                                            <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                    <input type="hidden" name="cmd" value="_cart">
-                                                    <input type="hidden" name="add" value="1">
-                                                    <input type="hidden" name="transmitv_item" value="Blue Sweater">
-                                                    <input type="hidden" name="amount" value="499.99">
-                                                    <button type="submit"
-                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                        Add to Cart
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3 class="title"><a href="ecommerce-single.html">Blue Sweater</a></h3>
-                                            <span class="price"><del>$575.00</del>$499.99</span>
-                                        </div>
-                                    </div>
-
                                 </div>
                                 <div class="col-lg-3 col-6 product-incfhny mb-4">
                                     <div class="product-grid2 transmitv">
@@ -1186,12 +1400,372 @@
                                             </div>
                                         </div>
                                         <div class="product-content">
+                                            <h3 class="title"><a href="#">Product name </a></h3>
+                                            <h3 class="title"><a href="#">Vendor name </a></h3>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="far fa-star"></li>
+                                                <li class="far fa-star"></li>
+                                            </ul>
+                                            <div class="price">
+                                                CA$100
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6 product-incfhny mb-4">
+                                    <div class="product-grid2 transmitv">
+                                        <div class="product-image2">
+                                            <a href="ecommerce-single.html">
+                                                <img class="pic-1 img-fluid" src="assets/images/shop-1.jpg">
+                                                <img class="pic-2 img-fluid" src="assets/images/shop-11.jpg">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" data-tip="Quick View"><span
+                                                            class="fa fa-eye"></span></a>
+                                                </li>
+
+                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
+                                                            class="fa fa-shopping-bag"></span></a>
+                                                </li>
+                                            </ul>
+                                            <div class="transmitv single-item">
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart">
+                                                    <input type="hidden" name="add" value="1">
+                                                    <input type="hidden" name="transmitv_item" value="Women Maroon Top">
+                                                    <input type="hidden" name="amount" value="899.99">
+                                                    <button type="submit"
+                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
+                                                        Add to Cart
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3 class="title"><a href="#">Product name </a></h3>
+                                            <h3 class="title"><a href="#">Vendor name </a></h3>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                            </ul>
+                                            <div class="price">
+                                                CA$100
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6 product-incfhny mb-4">
+                                    <div class="product-grid2 transmitv">
+                                        <div class="product-image2">
+                                            <a href="ecommerce-single.html">
+                                                <img class="pic-1 img-fluid" src="assets/images/shop-1.jpg">
+                                                <img class="pic-2 img-fluid" src="assets/images/shop-11.jpg">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" data-tip="Quick View"><span
+                                                            class="fa fa-eye"></span></a>
+                                                </li>
+
+                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
+                                                            class="fa fa-shopping-bag"></span></a>
+                                                </li>
+                                            </ul>
+                                            <div class="transmitv single-item">
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart">
+                                                    <input type="hidden" name="add" value="1">
+                                                    <input type="hidden" name="transmitv_item" value="Women Maroon Top">
+                                                    <input type="hidden" name="amount" value="899.99">
+                                                    <button type="submit"
+                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
+                                                        Add to Cart
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3 class="title"><a href="#">Product name </a></h3>
+                                            <h3 class="title"><a href="#">Vendor name </a></h3>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                            </ul>
+                                            <div class="price">
+                                                CA$100
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6 product-incfhny mb-4">
+                                    <div class="product-grid2 transmitv">
+                                        <div class="product-image2">
+                                            <a href="ecommerce-single.html">
+                                                <img class="pic-1 img-fluid" src="assets/images/shop-1.jpg">
+                                                <img class="pic-2 img-fluid" src="assets/images/shop-11.jpg">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" data-tip="Quick View"><span
+                                                            class="fa fa-eye"></span></a>
+                                                </li>
+
+                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
+                                                            class="fa fa-shopping-bag"></span></a>
+                                                </li>
+                                            </ul>
+                                            <div class="transmitv single-item">
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart">
+                                                    <input type="hidden" name="add" value="1">
+                                                    <input type="hidden" name="transmitv_item" value="Women Maroon Top">
+                                                    <input type="hidden" name="amount" value="899.99">
+                                                    <button type="submit"
+                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
+                                                        Add to Cart
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3 class="title"><a href="#">Product name </a></h3>
+                                            <h3 class="title"><a href="#">Vendor name </a></h3>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                            </ul>
+                                            <div class="price">
+                                                CA$100
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6 product-incfhny mb-4">
+                                    <div class="product-grid2 transmitv">
+                                        <div class="product-image2">
+                                            <a href="ecommerce-single.html">
+                                                <img class="pic-1 img-fluid" src="assets/images/shop-1.jpg">
+                                                <img class="pic-2 img-fluid" src="assets/images/shop-11.jpg">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" data-tip="Quick View"><span
+                                                            class="fa fa-eye"></span></a>
+                                                </li>
+
+                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
+                                                            class="fa fa-shopping-bag"></span></a>
+                                                </li>
+                                            </ul>
+                                            <div class="transmitv single-item">
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart">
+                                                    <input type="hidden" name="add" value="1">
+                                                    <input type="hidden" name="transmitv_item" value="Women Maroon Top">
+                                                    <input type="hidden" name="amount" value="899.99">
+                                                    <button type="submit"
+                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
+                                                        Add to Cart
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3 class="title"><a href="#">Product name </a></h3>
+                                            <h3 class="title"><a href="#">Vendor name </a></h3>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                            </ul>
+                                            <div class="price">
+                                                CA$100
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6 product-incfhny mb-4">
+                                    <div class="product-grid2 transmitv">
+                                        <div class="product-image2">
+                                            <a href="ecommerce-single.html">
+                                                <img class="pic-1 img-fluid" src="assets/images/shop-1.jpg">
+                                                <img class="pic-2 img-fluid" src="assets/images/shop-11.jpg">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" data-tip="Quick View"><span
+                                                            class="fa fa-eye"></span></a>
+                                                </li>
+
+                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
+                                                            class="fa fa-shopping-bag"></span></a>
+                                                </li>
+                                            </ul>
+                                            <div class="transmitv single-item">
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart">
+                                                    <input type="hidden" name="add" value="1">
+                                                    <input type="hidden" name="transmitv_item" value="Women Maroon Top">
+                                                    <input type="hidden" name="amount" value="899.99">
+                                                    <button type="submit"
+                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
+                                                        Add to Cart
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3 class="title"><a href="#">Product name </a></h3>
+                                            <h3 class="title"><a href="#">Vendor name </a></h3>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                            </ul>
+                                            <div class="price">
+                                                CA$100
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6 product-incfhny mb-4">
+                                    <div class="product-grid2 transmitv">
+                                        <div class="product-image2">
+                                            <a href="ecommerce-single.html">
+                                                <img class="pic-1 img-fluid" src="assets/images/shop-1.jpg">
+                                                <img class="pic-2 img-fluid" src="assets/images/shop-11.jpg">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" data-tip="Quick View"><span
+                                                            class="fa fa-eye"></span></a>
+                                                </li>
+
+                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
+                                                            class="fa fa-shopping-bag"></span></a>
+                                                </li>
+                                            </ul>
+                                            <div class="transmitv single-item">
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart">
+                                                    <input type="hidden" name="add" value="1">
+                                                    <input type="hidden" name="transmitv_item" value="Women Maroon Top">
+                                                    <input type="hidden" name="amount" value="899.99">
+                                                    <button type="submit"
+                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
+                                                        Add to Cart
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3 class="title"><a href="#">Product name </a></h3>
+                                            <h3 class="title"><a href="#">Vendor name </a></h3>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                            </ul>
+                                            <div class="price">
+                                                CA$100
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6 product-incfhny mb-4">
+                                    <div class="product-grid2 transmitv">
+                                        <div class="product-image2">
+                                            <a href="ecommerce-single.html">
+                                                <img class="pic-1 img-fluid" src="assets/images/shop-1.jpg">
+                                                <img class="pic-2 img-fluid" src="assets/images/shop-11.jpg">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" data-tip="Quick View"><span
+                                                            class="fa fa-eye"></span></a>
+                                                </li>
+
+                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
+                                                            class="fa fa-shopping-bag"></span></a>
+                                                </li>
+                                            </ul>
+                                            <div class="transmitv single-item">
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart">
+                                                    <input type="hidden" name="add" value="1">
+                                                    <input type="hidden" name="transmitv_item" value="Women Maroon Top">
+                                                    <input type="hidden" name="amount" value="899.99">
+                                                    <button type="submit"
+                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
+                                                        Add to Cart
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3 class="title"><a href="#">Product name </a></h3>
+                                            <h3 class="title"><a href="#">Vendor name </a></h3>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                            </ul>
+                                            <div class="price">
+                                                CA$100
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-lg-3 col-6 product-incfhny mb-4">
+                                    <div class="product-grid2 transmitv">
+                                        <div class="product-image2">
+                                            <a href="ecommerce-single.html">
+                                                <img class="pic-1 img-fluid" src="assets/images/shop-1.jpg">
+                                                <img class="pic-2 img-fluid" src="assets/images/shop-11.jpg">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" data-tip="Quick View"><span
+                                                            class="fa fa-eye"></span></a>
+                                                </li>
+                                
+                                                <li><a href="ecommerce.html" data-tip="Add to Cart"><span
+                                                            class="fa fa-shopping-bag"></span></a>
+                                                </li>
+                                            </ul>
+                                            <div class="transmitv single-item">
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart">
+                                                    <input type="hidden" name="add" value="1">
+                                                    <input type="hidden" name="transmitv_item" value="Women Maroon Top">
+                                                    <input type="hidden" name="amount" value="899.99">
+                                                    <button type="submit"
+                                                        class="transmitv-cart ptransmitv-cart add-to-cart">
+                                                        Add to Cart
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
                                             <h3 class="title"><a href="ecommerce-single.html">Women Maroon Top </a>
                                             </h3>
                                             <span class="price"><del>$975.00</del>$899.99</span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                             </div>
                             <!-- //row-->
@@ -1226,102 +1800,142 @@
         </section>
 
 
-        <!-- Footer Section Begin -->
-        <footer class="footer-social-icons">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer-left" id="footer-left">
+<!-- Footer Section Begin -->
+<footer class="footer-social-icons">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer-left" id="footer-left">
 
-                            <div class="footer-social">
-                                <h6>FOLLOW US</h6>
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-pinterest"></i></a>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </footer>
-        <footer class="footer-section" id="footer-section">
-            <div class="container">
-
-                <div class="row l-r-sp">
-
-                    <div class="col-lg-3">
-                        <div class="footer-widget">
-                            <!-- <h5>Promote your brand with us</h5> -->
-                            <ul>
-                                <li><a href="#">Shop</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="footer-widget">
-
-                            <ul>
-                                <li><a href="#">Promote</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="footer-widget">
-
-                            <ul>
-                                <li><a href="#">About</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="footer-widget">
-
-                            <ul>
-                                <li><a href="#">Help</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- <div class="col-lg-4">
-                    <div class="newslatter-item">
-                        <h5>Join Our Newsletter Now</h5>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Enter Your Mail">
-                            <button type="button">Subscribe</button>
-                        </form>
-                    </div>
-                </div> -->
-                </div>
-            </div>
-            <div class="copyright-reserved">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="copyright-text">
-                                Copyright &copy;
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script> All rights reserved
-
-                            </div>
-                            <div class="payment-pic">
-                                <img src="img/payment-method.png" alt="">
-                            </div>
-                        </div>
+                    <div class="footer-social">
+                        <h6>FOLLOW US</h6>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Footer Section End -->
+        </div>
 
+    </div>
+</footer>
+<style>
+    .home-newsletter {
+padding: 20px 0;
+background: #1A1A1A
+}
+
+.home-newsletter .single {
+max-width: 650px;
+margin: 0 auto;
+text-align: center;
+position: relative;
+z-index: 2; }
+.home-newsletter .single h2 {
+font-size: 15px;
+color: white;
+text-transform: uppercase;
+margin-bottom: 10px; }
+.home-newsletter .single .form-control {
+height: 40px;
+background: rgba(255, 255, 255, 0.6);
+border-color: transparent;
+border-radius: 20px 0 0 20px; }
+.home-newsletter .single .form-control:focus {
+box-shadow: none;
+border-color: #243c4f; }
+.home-newsletter .single .btn {
+min-height: 40px; 
+border-radius: 0 20px 20px 0;
+background: #243c4f;
+color: #fff;
+}
+</style>
+<section class="home-newsletter">
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-12">
+        <div class="single">
+            <h2>Sign up for modasty news</h2>
+        <div class="input-group">
+             <input type="email" class="form-control" placeholder="Enter your email">
+             <span class="input-group-btn">
+             <button class="btn btn-theme" type="submit">Subscribe</button>
+             </span>
+              </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </section>
+<footer class="footer-section" id="footer-section">
+    <div class="container">
+
+        <div class="row l-r-sp">
+          
+            <div class="col-lg-3">
+                <div class="footer-widget">
+                    <!-- <h5>Sell your brand with us</h5> -->
+                    <ul>
+                        <li><a href="#">Shop</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footer-widget">
+
+                    <ul>
+                        <li><a href="#">Sell</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footer-widget">
+
+                    <ul>
+                        <li><a href="#">About</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footer-widget">
+
+                    <ul>
+                        <li><a href="#">Help</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-reserved">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                         &copy;
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> MODASTY All rights reserved
+          
+                    </div>
+                    <div class="payment-pic">
+                        <div class="last-links">
+                            <li><a href="">Privacy policy</a> | </li>
+                            <li><a href="">Terms of service</a></li>
+                        </div>
+                        <img src="img/payment-method.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
         <script src="js/main2.js"></script>
 
         <script src="assets/js/jquery-3.3.1.min.js"></script>
