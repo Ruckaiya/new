@@ -60,9 +60,9 @@ body input {
   border-radius: 6px;
 }
 
-body img {
+/* body img {
   border-radius: 6px;
-}
+} */
 
 .noscroll {
   overflow: hidden;
@@ -70,8 +70,8 @@ body img {
 
 h3.hny-title,
 h3.hny-title.two {
-  font-size: 40px;
-  line-height: 50px;
+  font-size: 20px;
+  line-height: 20px;
   color: #232020;
   margin-bottom: 24px;
   text-transform: uppercase;
@@ -134,8 +134,8 @@ a.read-more-btn2.btn:hover {
 
   h3.hny-title,
   h3.hny-title.two {
-    font-size: 36px;
-    line-height: 46px;
+    font-size: 20px;
+    line-height: 36px;
   }
 }
 
@@ -157,7 +157,7 @@ a.read-more-btn2.btn:hover {
 
   h3.hny-title,
   h3.hny-title.two {
-    font-size: 30px;
+    font-size: 20px;
     line-height: 40px;
   }
 
@@ -170,7 +170,7 @@ a.read-more-btn2.btn:hover {
 
   h3.hny-title,
   h3.hny-title.two {
-    font-size: 28px;
+    font-size: 18px;
     line-height: 38px;
   }
 }
@@ -179,7 +179,7 @@ a.read-more-btn2.btn:hover {
 
   h3.hny-title,
   h3.hny-title.two {
-    font-size: 26px;
+    font-size: 16px;
     line-height: 36px;
   }
 }
@@ -5378,6 +5378,7 @@ input#amount1 {
   left: 0%;
   top: -27px;
   margin-top: -10px;
+  font-family: 'Lato', sans-serif;
 }
 
 .range,
@@ -7263,7 +7264,7 @@ iframe {
 }
 
 .w3l-banner-slider-main.inner-pagehny {
-  /*-- Responsive design --*/
+  background-color: #fff2f7;
 }
 
 /* .w3l-banner-slider-main.inner-pagehny .breadcrumb-infhny {
@@ -7307,7 +7308,7 @@ iframe {
   list-style: none;
   background-color: transparent;
   border-radius: 0.25rem;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .w3l-banner-slider-main.inner-pagehny ol.breadcrumb li {
@@ -7320,7 +7321,8 @@ iframe {
 }
 
 .w3l-banner-slider-main.inner-pagehny ol.breadcrumb a {
-  color: #000;
+  color: #6d6d6d;
+  font-size: 13px;
 }
 
 .w3l-banner-slider-main.inner-pagehny .breadcrumb-item.active {
@@ -7695,7 +7697,6 @@ iframe {
 
 .w3l-contacts-8 span.texthny {
   color: var(--dark-pink);
-  font-family: 'Oswald', sans-serif;
 }
 
 .w3l-contacts-8 .partners p a {
@@ -9809,6 +9810,11 @@ pre code {
 .table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #dee2e6;
+  font-size: 12px;
+}
+
+.table>tbody>tr>td {
+  font-size: 14px;
 }
 
 .table tbody+tbody {
@@ -10640,7 +10646,7 @@ textarea.form-control.is-invalid {
   }
 }
 
-.btn {
+/* .btn {
   display: inline-block;
   font-weight: 400;
   color: #212529;
@@ -10658,7 +10664,7 @@ textarea.form-control.is-invalid {
   line-height: 1.5;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
+} */
 
 @media (prefers-reduced-motion: reduce) {
   .btn {
