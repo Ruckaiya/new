@@ -93,6 +93,46 @@ header .btn {
     height: calc(2.445rem + 2px);
     border-radius: 0;
 }
+
+header.masthead img{
+    width: 454px;
+}
+
+@media screen and (max-width: 500px) {
+    header.masthead img{
+    width: 300px;
+}
+}
+
+@media screen and (max-width: 700px){
+  
+  .container {
+      padding-right: 0;
+      padding-left: 0;
+  }
+  .row {
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+  .form-control-lg,
+  .btn-lg,
+  h3,
+  h4,
+  h5 {
+      font-size: 15px;
+  }
+}
+
+.form-control-lg,
+.btn-lg {
+  font-size: 15px;
+}
+  h3,
+  h4,
+  h5 {
+      font-size: 19px;
+  }
 </style>
 
     <!-- Masthead -->
@@ -148,93 +188,6 @@ header .btn {
               </div>
           </div>
         </div>
-      </header>
-
-      <style>
-
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-}
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
-}
-
-.popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 100%;
-  position: relative;
-  /* transition: all 5s ease-in-out; */
-}
-
-.popup h2 {
-  margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
-}
-.popup .close {
-  position: absolute;
-  top: -40px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-.popup .close:hover {
-  color: #06D85F;
-}
-.popup .content {
-  max-height: 30%;
-  overflow: auto;
-}
-
-@media screen and (max-width: 700px){
-  /* .popup{
-    width: 70%;
-  } */
-
-  .container {
-      padding-right: 0;
-      padding-left: 0;
-  }
-  .row {
-      margin-left: 0;
-      margin-right: 0;
-  }
-
-  .form-control-lg,
-  .btn-lg,
-  h3,
-  h4,
-  h5 {
-      font-size: 15px;
-  }
-}
-
-.form-control-lg,
-.btn-lg {
-  font-size: 15px;
-}
-  h3,
-  h4,
-  h5 {
-      font-size: 19px;
-  }
-      </style>
-
-     
+      </header>    
 </body>
 </html>
