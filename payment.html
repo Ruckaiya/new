@@ -86,11 +86,12 @@
   <div class="checkout">
   <div class="page-container" id="PageContainer">
     <header class="checkout-header">
-    <div class="header-wrapper">
+    <div class="header-wrapper" style="background-color: white; height: 66px;">
       <a class="logo-link" href="/">
         <img src="img/modasty_small.png" width="200px" alt="">
 </a>
 </div>
+    </header>
 <nav class="checkout-breadcrumbs">       
   <nav aria-label="Breadcrumb">
     <ul class="breadcrumb ">
@@ -101,16 +102,16 @@
           <li class="breadcrumb__item breadcrumb__item--completed">
           <a class="breadcrumb__link" href="info.html">Information</a>
         </li>
-          <li class="breadcrumb__item breadcrumb__item--completed">
+          <!-- <li class="breadcrumb__item breadcrumb__item--completed">
           <a class="breadcrumb__link" href="shipping.html">Shipping</a>
-        </li>
+        </li> -->
           <li class="breadcrumb__item breadcrumb__item--completed" >
           <span class="breadcrumb__text">Payment</span>
         </li>
     </ul>
   </nav>
  </nav>
-</header>
+
 
 
 
@@ -178,6 +179,7 @@
           </td>
           <td class="product__price">
             <span class="order-summary__emphasis">$69.98 CAD</span>
+            <!-- <h6 class="order-delivery__cost">Delivery: $10 CAD</h6> -->
           </td>
         </tr>
          <tr class="product">
@@ -197,8 +199,9 @@
           <td class="product__quantity visually-hidden">
             2
           </td>
-          <td class="product__price">
+           <td class="product__price">
             <span class="order-summary__emphasis">$69.98 CAD</span>
+            <!-- <h6 class="order-delivery__cost">Delivery: $10 CAD</h6> -->
           </td>
         </tr>
          <tr class="product">
@@ -218,8 +221,9 @@
           <td class="product__quantity visually-hidden">
             2
           </td>
-          <td class="product__price">
+           <td class="product__price">
             <span class="order-summary__emphasis">$69.98 CAD</span>
+            <!-- <h6 class="order-delivery__cost">Delivery: $10 CAD</h6> -->
           </td>
         </tr>
       </tbody>
@@ -272,12 +276,12 @@
   <tr class="total-line total-line--shipping">
   <th class="total-line__name" scope="row">
       <span>
-        Shipping
+        Delivery cost
       </span>
   </th>
   <td class="total-line__price">
     <span class="order-summary__emphasis">
-      Free
+    10 CAD
     </span>
   </td>
 </tr>
@@ -452,9 +456,10 @@
                         <!-- Credit card form tabs -->
                         <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill">
                             <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
-                            <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
+                            <!-- <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
                             <li class="nav-item"> <a data-toggle="pill" href="#stripe" class="nav-link "> <i class="fab fa-stripe mr-2"></i> Stripe </a> </li>
-                        </ul>
+                         -->
+                          </ul>
                     </div> <!-- End -->
                     <!-- Credit card form content -->
                     <div class="tab-content">
@@ -491,18 +496,19 @@
                         </div>
                     </div> <!-- End -->
                     <!-- Paypal info -->
-                    <div id="paypal" class="tab-pane fade pt-3">
-                        <!-- <h6 class="py-2">Select your paypal account type</h6>
+                    <!-- <div id="paypal" class="tab-pane fade pt-3">
+                         <h6 class="py-2">Select your paypal account type</h6>
                         <div class="form-group "> <label class="radio-inline"> <input type="radio" name="optradio" checked> Domestic </label> <label class="radio-inline"> <input type="radio" name="optradio" class="ml-5">International </label></div>
-                         -->
+                         
                         <p> <button type="button" class="btn btn-primary mt-2"><i class="fab fa-paypal mr-2"></i> Log into my Paypal</button> </p>
                         <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
-                    </div> <!-- End -->
+                    </div>  -->
+                    <!-- End -->
                     <!-- Stripe info -->
-                    <div id="stripe" class="tab-pane fade pt-3 mt-2">
+                    <!-- <div id="stripe" class="tab-pane fade pt-3 mt-2">
                        <p> <button type="button" class="btn btn-primary "><i class="fab fa-stripe mr-2"></i> Log into my Stripe</button> </p>
                         <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
-                    </div>
+                    </div> -->
                      <!-- End -->
                     <!-- End -->
               

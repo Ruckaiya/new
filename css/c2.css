@@ -809,6 +809,10 @@
 .content-box .order-summary__emphasis {
     color: #333333;
 }
+.checkout .page-container .order-delivery__cost {
+    color: #53585f;
+    font-weight: bold;
+}
 .order-summary__small-text {
     font-size: 0.8571428571em;
 }
@@ -3198,6 +3202,11 @@ th:last-child {
 }
 .checkout .page-container {
     background-color: #f3f3f3;
+}
+@media only screen and (max-width: 500px) {
+.checkout .page-container header{
+    height: 50px;
+}
 }
 .page--hidden-breadcrumbs .checkout-breadcrumbs,
 .page--stock-problems .checkout-breadcrumbs,
