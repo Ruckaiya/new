@@ -607,8 +607,83 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#">Suits</a></li>
+                        
+                        <li class="nav-item dropdown megamenu-li dmenu">
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Suits</a>
+                            <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                                <div class="row">
+                                    <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                        <h6>Black</h6>
+                                        <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                        <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                        <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                        <h6>Black</h6>
+                                        <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                        <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                        <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
 
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                        <h6>Black</h6>
+                                        <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                        <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                        <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3  mb-4">
+                                        <h6>Black</h6>
+                                        <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                        <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                        <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                        <h6>Black</h6>
+                                        <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                        <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                        <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                        <h6>Black</h6>
+                                        <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                        <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                        <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                        <h6>Black</h6>
+                                        <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                        <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                        <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3  mb-4">
+                                        <h6>Black</h6>
+                                        <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                        <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                        <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                        <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
 
                         <!--=========-->
                         <li class="nav-item dropdown megamenu-li dmenu">
@@ -1195,10 +1270,16 @@
 
 /* ==== Slider Style === */
 .Modern-Slider .item .img-fill{
-  height: 6vh;
+  height: 8vh;
   background:#000;
 }
 
+@media (min-width: 770px) {
+.Modern-Slider .item .img-fill{
+  height: 6vh;
+}
+
+}
 .Modern-Slider .item .img-fill .info{
   position:absolute;
   width:100%;
@@ -1220,34 +1301,36 @@
 
 .Modern-Slider .NextArrow{
   position:absolute;
-  top:50%;
+  top:38%;
   right:0px;
   width:45px;
-  height:38px;
-  background:rgba(0,0,0,.50);
+  height: 1px;
+  /* height:38px;
+  background:rgba(165, 165, 165, 0.5); */
   border:0 none;
   margin-top:-18px;
   text-align:center;
   font:20px/45px FontAwesome;
   color:#FFF;
   z-index:5;
+  background-color: transparent;
 }
 
 .Modern-Slider .NextArrow:before{content:'\f105';}
 
 .Modern-Slider .PrevArrow{
   position:absolute;
-  top:50%;
+  top:38%;
   left:0px;
   width:45px;
-  height:38px;
-  background:rgba(0,0,0,.50);
+  height:1px;
   border:0 none;
   margin-top:-18px;
   text-align:center;
   font:20px/45px FontAwesome;
   color:#FFF;
   z-index:5;
+  background-color: transparent;
 }
 
 .Modern-Slider .PrevArrow:before{content:'\f104';}
@@ -1352,7 +1435,7 @@
     <div class="img-fill">
       <div class="info">
         <div>
-        <h5  class="pt-xl-2">BLACK FRIDAY! UP TO 80% OFF!</h5>
+        <h5  >BLACK FRIDAY! UP TO 80% OFF!</h5>
         </div>
       </div>
     </div>
@@ -1363,7 +1446,7 @@
     <div class="img-fill">
       <div class="info">
         <div>
-            <h5 class="pt-xl-2">✈️ FREE SHIPPING OVER $75. USA & CANADA ONLY</h5>
+            <h5 >✈️ FREE SHIPPING OVER $75. USA & CANADA ONLY</h5>
         </div>
       </div>
     </div>
@@ -1374,7 +1457,7 @@
     <div class="img-fill">
       <div class="info">
         <div>
-          <h5 class="pt-xl-2"> TRACK YOUR ORDER! 🚚 📦</h5>
+          <h5 > TRACK YOUR ORDER! 🚚 📦</h5>
         </div>
       </div>
     </div>
@@ -1385,7 +1468,7 @@
       <div class="info">
         <div>
      <!-- <h5>BLACK FRIDAY! UP TO 80% OFF!</h5> -->
-     <h5 class="pt-xl-2"> DON'T FORGET TO CHECK THE SIZE CHART </h5>
+     <h5 > DON'T FORGET TO CHECK THE SIZE CHART </h5>
         </div>
       </div>
     </div>
@@ -1395,7 +1478,7 @@
     <div class="img-fill">
       <div class="info">
         <div>
-          <h5 class="pt-xl-2"> DON'T FORGET TO LOOK AT THE DELIVERY INFORMATION</h5>
+          <h5 > DON'T FORGET TO LOOK AT THE DELIVERY INFORMATION</h5>
         </div>
       </div>
     </div>
@@ -1403,7 +1486,9 @@
   <!-- // Item -->
 </div>
     </header>
-    <!-- Header End -->
+    <!-- Header End 
+    class="pt-xl-2"
+    -->
 
     <!-- Hero Section Begin -->
     <section class="hero-section">
@@ -3039,13 +3124,13 @@
 		 &copy;
                         <script>
                             document.write(new Date().getFullYear());
-                        </script> MODASTY All rights reserved
+                        </script> MODASTY All Rights Reserved
 	</div>
 	
 	<div class="column">
          <div class="last-links text-center">
-                            <li><a href="">Privacy policy</a> | </li>
-                            <li><a href="">Terms of service</a></li>
+                            <li><a href="">Privacy Policy</a> | </li>
+                            <li><a href="">Terms of Service</a></li>
                         </div>
 	</div>
   
@@ -3081,7 +3166,7 @@
 
             if ($(window).width() >= 769) {
                 $('.navbar-light .dmenu').hover(function () {
-                    $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
+                    $(this).find('.sm-menu').first().stop(true, true).slideDown(550);
                 }, function () {
                     $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
                 });
