@@ -7267,6 +7267,18 @@ iframe {
   background-color: #fff2f7;
 }
 
+@media screen and (max-width: 325px) {
+  .w3l-banner-slider-main.inner-pagehny {
+    margin-top: 15%;
+}
+}
+
+@media screen and (max-width: 500px) and (min-width: 326px){
+  .w3l-banner-slider-main.inner-pagehny {
+    margin-top: 12%;
+  }
+}
+
 /* .w3l-banner-slider-main.inner-pagehny .breadcrumb-infhny {
   background: url(../images/bg1.jpg) no-repeat center;
   background-size: cover;
