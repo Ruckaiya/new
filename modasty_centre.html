@@ -1274,7 +1274,21 @@
   background:#000;
 }
 
-@media (min-width: 770px) {
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+    .Modern-Slider .item .img-fill{
+        height: 6vh;
+    }
+
+    .w3l-banner-slider-main.inner-pagehny {
+    margin-top: 12%;
+    }
+}
+
+@media (min-width: 815px) {
 .Modern-Slider .item .img-fill{
   height: 6vh;
 }
