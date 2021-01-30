@@ -1355,8 +1355,725 @@
     </section>
   
 
+    
+<style>
+
+ /* .centre_banner header.fixed-to-top{
+  background: rgba(38, 50, 56, 1);
+}
+
+#brand h1{
+  letter-spacing: 10px;
+  text-shadow: 2px 2px 5px #111;
+}
+.centre_banner nav{
+  float: right;
+  margin-top: 10px;
+} */
+
+ #brand {
+     color: #ccc;
+ margin-left: auto;
+    margin-right: auto;
+     display: flex;
+     flex-wrap: wrap;
+     align-content: center;
+     text-transform: capitalize;
+ }
+#brand h3 {
+    text-align: center;
+}
+ .centre_banner nav li {
+     display: inline-block;
+     margin: 0 4px;
+ }
+
+ .centre_banner nav li a {
+     padding: 10px 0;
+     text-decoration: none;
+     color: #fff;
+     transition: all ease-in-out 0.5s;
+     font-size: 15px;
+     font-family: 'Lato', sans-serif;
+ }
+
+ .centre_banner nav li a:hover {
+     color: #000;
+     text-decoration: underline;
+ }
+
+ .centre_banner section {
+     display: flex;
+     justify-content: center;
+     z-index: 0;
+ }
+
+ .centre_banner section h2 {
+     display: flex;
+     flex-wrap: wrap;
+     align-content: center;
+     text-transform: capitalize;
+ }
+
+ #sticky {
+     padding: 0.5ex;
+     background-color: #A9365F;
+     color: #fff;
+     font-family: 'Lato', sans-serif;
+   
+ }
+
+ #sticky.stick {
+     position: fixed;
+     top: 0;
+     z-index: 10000;
+     width: 100%;
+ }
+
+.how-section1{
+    margin-top:-15%;
+    padding: 10%;
+}
+.how-section1 h4{
+    color: #000;
+    font-weight: bold;
+    font-size: 30px;
+}
+.how-section1 .subheading{
+    color: #A9365F;
+    font-size: 20px;
+}
+.how-section1 .row
+{
+    margin-top: 12.5%;
+}
+.how-img 
+{
+    text-align: center;
+}
+.how-img img{
+    width: 100%;
+}
+
+#shop h2,
+#sell h2,
+#help h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 500px){
+.centre_banner header {
+    height: 100px;
+}
+#shop h2,
+#sell h2,
+#help h2 {
+    font-size: 24px;
+}
+}
+</style>
+<div id="sticky-anchor"></div>
+<div id="sticky">
+    <div class="centre_banner" id="centre_banner">
+<header>
+  <div class="wrapHead" data-spy="scroll" data-target=".modasty_centre_nav" data-offset="50">
+    <h3 class="text-center text-light pt-2" style="font-family: 'Lato', sans-serif;">MODASTY Centre</h3>
+</div>
+ 
+    <nav class="text-center py-3 modasty_centre_nav">
+      <ul>
+        <li><a href="#about" class="scroll">About</a></li>
+        <li><a href="#shop" class="scroll">Shop</a></li>
+        <li><a href="#sell" class="scroll">Sell</a></li>
+        <li><a href="#help" class="scroll">Help</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+ </div></div>
+ <div class="centre_banner">
+<div class="how-section1">
+    <section id="about">
+         <div class="row">
+                        <div class="col-md-6 how-img">
+                            <img src="img/about-us.png" class="img-fluid" alt=""/>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>ABOUT US</h4> <br>
+                        <p class="text-muted">
+                           We are a marketplace of real people connecting over modest fashion. Our platform empowers sellers to do what they love and helps shoppers to find what they love! 
+                            <br> <br>
+                           Shop and support multiple small modest fashion businesses — all in one place. 
+
+                        </p>
+                        </div>
+                    </div>
+    </section>
+                   <section>
+                        <div class="row">
+                         <div class="col-md-6">
+                            <h4>OUR MISSION</h4> <br>
+                        <p class="text-muted">
+                          As a female POC founded business, our mission is to provide access to your favorite modest and cultural fashion.
+                          <br> <br>
+                          Growing up in North America,  the CEO of MODASTY, Roa’a Mashaleh, always found it difficult to access modest and cultural fashion. Thus, the idea of MODASTY was born. MODASTY is the solution to all of our personal difficulties.
+                        <br> <br>
+                        Shop modest fashion. Shop MODASTY. 
+
+                        </p>
+                        </div>
+                        <div class="col-md-6 how-img">
+                            <img src="img/our-mission.png" class=" img-fluid" alt=""/>
+                        </div>
+                    </div>
+                   </section>
+               
+                </div>
+
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+#contact .container{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#contact .container h2{
+    position: relative;
+    color: hotpink;
+    margin: 20px 0;
+    text-align: center;
+}
+
+#contact .container h2::after{
+    position: absolute;
+    content: '';
+    width: 67px;
+    height: 2px;
+    right: 5px;
+    background-color: hotpink;
+    bottom: 0;
+}
+
+.accordion{
+    width: 100%;
+    padding: 0 5px;
+    border: 2px solid #A9365F;
+    cursor: pointer;
+    display: flex;
+    margin: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.accordion i {
+    color: #EF9797;
+    transition: all .5s ease-in;
+}
+.accordion .fa-minus{
+    display: none;
+}
+.active, .accordion:hover{
+    background-color: #EF9797;
+    color: white;
+    transition: all .5s ease-in;
+    border: 2px solid #A9365F;
+}
+.active .fa-minus{
+    display: block;
+}
+.active .fa-plus{
+    display: none;
+}
+.accordion h5{
+    font-size: 15px;
+    margin: 0;
+    color: #001733;
+    padding-left: 5px;
+}
+.active i, .active h5 , .accordion:hover i , .accordion:hover h5{
+    color: white;
+}
+.panal{
+    /* padding: 0 15px;
+    border-left: 1px solid #EF9797; */
+    margin-left: 25px; 
+    font-size: 14px;
+    text-align: justify;
+    overflow: hidden;
+    transition: all .5s ease-in;
+    max-height: 0;
+    max-width: 72em;
+}
+
+.panal ul li{
+    color: #6b778d;
+    font-size: 15px;
+}
+.panal ul li::before {content: "•"; color: #A9365F};
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.faq {
+    font-family: Roboto;
+}
+
+.faq h4 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+                </style>
+<div class="fluid-container h-100 bg-dark py-5" id="shop">
+    <div class="d-flex text-center h-100">
+      <div class="my-auto w-100 text-white">
+        <h2>Ready to shop? <a href="">Click here</a></h2>
+      </div>
+    </div>
+  </div>
+<section>
+    <div class="container faq">
+        <h4 class="text-center font-weight-bold">FAQ For Shopping</h4>
+        <div class="accordion">
+            <h5>1. What is MODASTY?</h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+        <p>We are a marketplace of real people connecting over modest fashion. Our platform empowers sellers to do what they love and helps shoppers to find what they love! Shop and support multiple small modest fashion brands-- all in one place. 
+        </p>
+        <p>
+            Shop modest fashion. Shop MODASTY. 
+        </p>            
+        </div>
+
+        <div class="accordion">
+            <h5>2. 
+                What can I expect with COVID-19? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+                Yes, MODASTY operations are currently continuing. However, our delivery times may take a little longer than usual considering delayed postal services. You can find updated delivery times on the product detail page for each item, and for your order in the checkout.
+            </p>
+            <p>
+            Additionally, our customer service team is busier than usual during these uncertain times, but we are still here to help you and listen to your needs. Contact us for any assistance at support@modasty.com 
+            </p>        
+        </div>
+
+        <div class="accordion">
+            <h5>3. Waiting for a delivery? </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+          <div class="panal">
+            <p>
+Double check your expected delivery date under Account before getting in touch. Please note, items from different brands are considered as a separate dispatch with different delivery timelines.            </p>
+            <p>
+                Additionally, this date is an estimate and some deliveries may take longer. Contact us for any assistance at support@modasty.com 
+            </p>        
+        </div>
+
+        <div class="accordion">
+            <h5>4. Can I change the address of my order?</h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+                You can change your delivery address until the order has shipped. Please note that different brands may have different policies. Contact us for any assistance at support@modasty.com.
+            </p>
+        </div>
+
+         <div class="accordion">
+            <h5>5. What is your return policy and procedure?</h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+Returns are processed as per the requirements of individual brands. Further information can be found under the “Return Policy” of each item prior to purchase. Contact us for any assistance at support@modasty.com            </p>
+        </div>
+
+         <div class="accordion">
+            <h5>6. Can I pay cash on delivery? </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+Unfortunately, we do not accept Cash on Delivery options at the moment. However, there are different safe and convenient payment methods available.            </p>
+        </div>
+
+         <div class="accordion">
+            <h5>7. How can I use promo codes? </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+You can enter your promo code before proceeding to Secure Payment. The discounted amount will be reflected in the total and the breakdown. Please note that you may submit more than one promo code with the same purchase, but only one promo code for the same brand will be accepted.             </p>
+        </div>
+
+         <div class="accordion">
+            <h5>8. Can I cancel my order?</h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+Yes! Orders can be cancelled by emailing us at support@modasty.com. Please provide your order number, contact details and the item(s) you would like cancelled.            </p>
+        </div>
+
+         <div class="accordion">
+            <h5>9. What are the shipping fees?</h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+The shipping fees vary based on the brand, the shipping country and the quantity of items ordered. You can check the shipping fee at the check-out page. However, we always have promotions that include Free Shipping!            </p>
+<p>
+    Please note that packages delivered internationally may be subject to customs duty. In this case, customs officials will inform you about how to receive your order. Customs duty may vary according to your order and shipping country. It is the responsibility of the customer to pay duty on any order subject to customs clearance. 
+</p>        
+</div>
+
+         <div class="accordion">
+            <h5>10. What are the payment options? </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+We accept the following major debit and credit payment methods: American Express, PayPal, MasterCard, Visa, Maestro, and UCB.             </p>
+        </div>
+
+         <div class="accordion">
+            <h5>11. Do I have to register to shop? </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+Guest Checkout shopping is available for customers who don't wish to register an account. However, registering with us will help you be informed of the latest offers & promotions, easy return, tracking and will speed up the ordering process.            </p>
+        </div>
+
+         <div class="accordion">
+            <h5>12. How long do items stay in my basket? </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+Items will remain in your basket as long as they are in stock. If an item is out of stock it will automatically be removed, you can add it back once the item is back in stock or replace it with another item of your choice.            </p>
+        </div>
+
+         <div class="accordion">
+            <h5>13. What do I do if I receive a defective or damaged item?</h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+If you receive a damaged or a defective item, we apologize in advance. Please email us at support@modasty.com with your Order ID, Product Name of the defected item, along with photos of the item, the defect, and the interior- exterior labels and tag photos. Our Customer Care team will follow up to exchange the item and ensure your satisfaction as soon as possible.            </p>
+        </div>
+
+         <div class="accordion">
+            <h5>14.  
+                What do I do if I receive an incorrect item?
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+                If you receive an incorrect item, we apologize in advance. Please email us at support@modasty.com with your Order ID, Product, along with photos of the item, the defect, and the interior- exterior labels and tag photos. Our Customer Care team will follow up to exchange the item and ensure your satisfaction as soon as possible. 
+            </p>
+        </div>
+
+         <div class="accordion">
+            <h5>15.  
+                How long does a delivery take? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+The delivery time differs based on the products purchased, country of delivery, the brand, and the shipping company. You can check the estimated delivery time at “Account” on the website, or in the purchase email. 
+            </p>
+        </div>
+
+        <div class="accordion">
+            <h5>16.  
+                    How long before my order is dispatched? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+All brands dispatch their items within 96 hours. Once your item(s) from a brand is dispatched, you will receive an email from that individual brand with a tracking code. 
+            </p>
+            <p>
+                If a brand is unable to dispatch a product within 96 hours, they will reach out to you.
+            </p>
+        </div>
+
+        <div class="accordion">
+            <h5>17.  
+                How can I track my order? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>You can track your order status with the tracking code provided by e-mail. Once your purchase is complete, you will receive a confirmation email with MODASTY along with emails from the individual brands with tracking codes once dispatched. 
+
+            </p>
+        </div>
+
+        <div class="accordion">
+            <h5>18.  
+Do you ship to my country? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+At the current time, we can only ensure shipping to Canada and the United States. However, individual brands may have different shipping policies and extent. 
+            </p>
+        </div>
+
+        <div class="accordion">
+            <h5>19.  
+                    I have items from multiple brands, will they be delivered together? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+Each brand's items are considered as a separate dispatch. Once your purchase is complete, you will receive a confirmation email with MODASTY.  You can check the estimated delivery time at “Account” on the website, or in the confirmation email. Following that, once your item(s) from a brand is dispatched, you will receive an email from that individual brand with a tracking code. 
+            </p>
+        </div>
+
+        <div class="accordion">
+            <h5>20.  
+                Can I use more than one promo code in the same order? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+                Promo codes CAN be combined with other promotion codes.  Please note that while you may combine more than one promo code with the same purchase, only one promo code for the same brand will be accepted. 
+            </p>
+        </div>
+
+        <div class="accordion">
+            <h5>21.  
+                How safe is payment via credit card? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+                We provide highly secure and safe shopping experiences for our shoppers. All your Credit card details are encrypted from your bank and the safe payment gateway, hence no information is shared or saved by us.
+            </p>
+        </div>
+
+    </div>
+</section>
 
 
+<div class="fluid-container h-100 bg-secondary py-5 mt-5" id="sell">
+    <div class="d-flex text-center h-100">
+      <div class="container my-auto w-100 text-dark">
+        <h2>Ready to reach millions of shoppers in North America? Email us at selling@modasty.com </h2>
+      </div>
+    </div>
+  </div>
+<section>
+    <div class="container faq">
+        <h4 class="text-center font-weight-bold">FAQ For Selling</h4>
+          <div class="accordion">
+            <h5>1. What is MODASTY?</h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+        <p>We are a marketplace of real people connecting over modest fashion. Our platform empowers sellers to do what they love and helps shoppers to find what they love! Shop and support multiple small modest fashion brands-- all in one place. 
+        </p>
+        <p>
+            Shop modest fashion. Shop MODASTY. 
+        </p>            
+        </div>
+
+        <div class="accordion">
+            <h5>
+                2. How do I become a seller on MODASTY?
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+                Joining and becoming a seller on MODASTY is as easy as contacting us at selling@modasty.com! We will then ask for your brand and inventory details and take it from there. We are so excited to work with you! 
+            </p>
+        </div>
+
+        <div class="accordion">
+            <h5>
+                3. How do fees work on MODASTY? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+                Joining and becoming a seller on MODASTY is free! Unlike other marketplaces, there aren’t any complex listing, publishing, advertising nor payment processing fees. Only one simple transaction fee. 
+            </p>
+            <p>
+                It costs $0 to publish a listing to the marketplace. Once an item sells, there is a 15% transaction fee on the sale price only (not including the delivery or tax fees). With MODASTY Payments, our easy-to-use and secure payment system, it will cost $0 to accept payments from a wide variety of credit and debit cards.
+            </p>
+            <p>
+                Just sit back and enjoy secure transactions, one simple transaction fee, automatic deposits, and seller protection. 
+
+            </p>
+        </div>
+
+        <div class="accordion">
+            <h5>
+                4. What can I sell on MODASTY? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+                MODASTY provides a marketplace for everything to do with modest fashion. This includes: hijabs, sportswear, dresses, suits, sets, accessories, home decor and everything in between.
+            </p>
+        </div>
+
+        <div class="accordion">
+            <h5>
+                5. How do I get paid?
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+                With MODASTY Payments, our easy-to-use and secure payment system, you may accept payments from a wide variety of credit and debit cards. Funds from your sales are deposited directly to your bank account, minus our 15% transaction fee on the sale price only.
+            </p>
+        </div>
+
+        <div class="accordion">
+            <h5>
+                6. Why should I become a MODASTY seller? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+                There are too many reasons to become a MODASTY seller to list! Listing products on MODASTY come with so many benefits:
+                <ul>
+                    <li>
+                        Gives you additional visibility as a brand which cuts down your marketing costs and work that you have to do.
+                    </li>
+                    <li>
+                        Markets and promotes on your behalf which means more gains for you with none of the loss.
+                    </li>
+                    <li>
+                        Allows you to acquire new online shoppers which means ability to grow your revenue and helps you grow faster.
+                    </li>
+                    <li>
+                        Provides you with first in class data, including insights of big data in terms of customer tastes, and preferences which means you can easily adapt and grow with your customers. 
+                    </li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="accordion">
+            <h5>
+                7. How do I contact MODASTY for any help? 
+            </h5>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panal">
+            <p>
+                Once you are a MODASTY seller, you can reach out to our support staff by email or request a phone call whenever you have a question. 
+            </p>
+        </div>
+
+       
+        
+    </div>
+</section>
+
+ <div class="fluid-container h-100 py-5 mt-5" id="help" style="background-color: #A9365F;">
+    <div class="d-flex text-center h-100">
+      <div class="container my-auto w-100 text-dark">
+        <h2>Didn’t find what you needed?</h2>
+        <h2 class="pt-3">Contact us at support@modasty.com</h2>
+      </div>
+    </div>
+  </div>
+ </div>
+
+   <!-- Footer Section Begin -->
+
+<div class="wrapper">
+
+<section class="columns">
+	
+	<div class="column text-white copyright-text__align">
+		 &copy;
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> MODASTY All Rights Reserved
+	</div>
+	
+	<div class="column">
+         <div class="last-links text-center">
+                            <li><a href="">Privacy Policy</a> | </li>
+                            <li><a href="">Terms of Service</a></li>
+                        </div>
+	</div>
+  
+  <div class="column">
+       <div class="payment-pic">
+                        <img src="img/payment-method.png" alt="">
+                    </div>
+	</div>
+	
+</section>	
+
+</div>
 <!-- Footer Section End -->
 
     <!-- Js Plugins -->
