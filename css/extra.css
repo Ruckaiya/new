@@ -780,6 +780,10 @@ padding: 10px;
        line-height: 30px;
    }
 
+
+   /* .info{
+       padding: 20px;
+   } */
 }
 
 @media (max-width: 400px){
